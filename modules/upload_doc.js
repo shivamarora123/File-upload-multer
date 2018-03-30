@@ -29,10 +29,10 @@ router.post('/',upload.single('documentImage'),(req,res,next)=>{
    });
    documents.save().then(result=>{
      console.log(result);
-     res.status(201).json(result);
+     res.status(201).json({success:result});
    }).catch(err=>{
      console.log(err);
-     res.status(500).json(err);
+     res.status(500).json({error:err});
    });
 
 });
